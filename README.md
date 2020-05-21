@@ -1,27 +1,25 @@
-# Assignment
+This is a angular Project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+Steps to run it 
+1. npm install
+2. ng serve --o
 
-## Development server
+Dependency 
+1. ngx-bootstrap
+2. bootstrap
+3. ngx-quill
+4. quill
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Objectives completed
+1. Search was implemented. Data was inconsistent . Not every giphy which was returned had a "source" , so had to use the "embed_url" with a custome pipe 'safe' in iframe source.
+2. ngx-quill was used to create to quill editor and added custome toolbar with predefined buttons. Added one extra custom button'G'.
+3. Opened modal when 'G' button in toolbar was clicked with content of first question. Search is working .
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Objectives remaining 
+1. Option to load more images is not present. (Less time to implement).
+2. Not able to add giphy in the editor after it was clicked from modal.(Less time)
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Area of improvements
+1. Only functional UI (No ui component like loader as of now )
+2. Less user friendly as of now.
