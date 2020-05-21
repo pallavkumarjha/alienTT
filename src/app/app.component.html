@@ -1,0 +1,72 @@
+<div class="container m-auto">
+  <h3 class="my-5">Assignment 1</h3>
+    <form [formGroup] = "searchForm" (ngSubmit)="getGIPHs(searchForm.value)">
+      <div class="form-row">
+          <div class="form-group col-12">
+            <div class="input-group mb-3">
+              <input #search type="text" id="search" formControlName="search" class="form-control" placeholder="Search">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">Search</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </form>
+  <div class="my-5">
+    <h5>Results</h5>
+    <div class="row" style="text-align: center;" *ngIf="gifList;">
+      <div class="col-3 p-2" *ngFor="let image of gifList.data">
+        <iframe [src]="image.embed_url | safe" style="height: 100px;width: 100px;border:none"></iframe>
+      </div>
+    </div>
+  </div>
+  <ng-template #blankUI>
+    <p class="lead">
+      Loading...
+    </p>
+  </ng-template>
+
+
+  <h3 class="my-5">Assignment 2</h3>
+  <p class="lead">Simple Quill Editor using ngx-quill and quill</p>
+  <quill-editor>
+    <div quill-editor-toolbar>
+      <span class="ql-formats">
+        <button class="ql-bold" [title]="'Bold'"></button>
+        <button class="ql-italic" [title]="'italic'"></button>
+        <button class="ql-underline" [title]="'underline'"></button>
+      </span>
+      <span class="ql-formats">
+        <button (click)="openModal(gifDialog)"  [title]="'G'">G</button>
+      </span>
+    </div>
+  </quill-editor> 
+</div>
+
+<ng-template #gifDialog>
+  <div>
+    <div class="m-auto">
+      <h3 class="my-2">Search GIPHY</h3>
+        <form [formGroup] = "searchForm2" (ngSubmit)="getGIPHs2(searchForm2.value)">
+          <div class="form-row">
+              <div class="form-group col-12">
+                <div class="input-group mb-3">
+                  <input #search type="text" id="search2" formControlName="search2" class="form-control" placeholder="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </form>
+      <div class="my-2">
+        <h5>Results</h5>
+        <div class="row" style="text-align: center;" *ngIf="gifList2;">
+          <div class="col-3 p-2" *ngFor="let image of gifList2.data">
+            <iframe [src]="image.embed_url | safe" (click)="embedImage(image)" style="height: 100px;width: 100px;border:none"></iframe>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+</ng-template>
